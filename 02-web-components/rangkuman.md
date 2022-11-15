@@ -1,0 +1,30 @@
+# Rangkuman Web Component
+
+- **Apa itu Web Component**
+  - Web Component merupakan fitur yang memungkinkan kita membuat elemen khusus yang reusable, ter-enkapsulasi, dan dapat digunakan pada website.
+  - Fitur ini merupakan salah satu fitur yang ditetapkan standar World Wide Web Consortium (W3C).
+  - Terdapat dua komponen utama yang telah dibahas, yaitu custom elements dan Shadow DOM.
+    - Custom Elements: Sekumpulan JavaScript API yang memungkinkan kita mendefinisikan element khusus dan tingkah lakunya. Custom element ini dapat digunakan sesuai kebutuhan kita.
+    - Shadow DOM: Sekumpulan JavaScript API yang menyertakan “bayangan” DOM Tree ke sebauh element. Shadow DOM ini dirender secara terpisah dari HTML Document.
+- **Life cycle callback dari Custom Elements**
+  - connectedCallback: Dijalankan ketika custom element telah terhubung pertama kali ke dokumen HTML. Callback ini biasanya untuk menjalankan konfigurasi awal, seperti mendapatkan data, mengatur atribut, dsb.
+  - disconnectedCallback: Dijalankan ketika custom element terputus dari dokumen HTML. Callback ini biasanya digunakan untuk membersihkan data-data yang tersimpan di elemen, seperti event, state, object, dsb.
+  - adoptedCallback: Dijalankan ketika custom element dipindahkan ke dokumen HTML baru. Biasanya callback ini jarang dimanfaatkan, tetapi jika kita memanfaatkan tag `<iframe>`, callback ini akan dijalankan.
+  - attributeChangedCallback: Dijalankan ketika salah satu atributnya ditambahkan, dihilangkan atau diubah. Callback ini biasanya digunakan untuk memuat ulang data yang ditampilkan oleh elemen.
+- **Atribut dan Method**
+  - Atribut dan method yang dimiliki sama seperti obyek DOM lainnya. Hal ini dikarenakan custom elemen mewarisi behaviour dari class HTMLElement. Contoh innerHTML, innerText, appendChild(), remove(), dsb.
+- **Penerapan Styling tanpa Shadow DOM**
+  - Untuk menetapkan styling tanpa Shadow DOM dapat menggunakan dua cara, yaitu menyertakan tag `<style>` saat merender template HTML menggunakan innerHTML dan menuliskan di berkas css yang dihubungkan ke dokumen HTML utama.
+  - Jika kita tidak menggunakan Shadow DOM dalam menerapkan styling, ini akan sangat rentan dalam memengaruhi element diluar custom element.
+- **Nested Custom Element**
+  - Nested Custom Element merupakan custom element yang berada di custom element lainnya. Dengan arti lain, suatu custom element dapat memiliki parent element maupun child element.
+  - Cara penerapannya adalah memanfaatkan function createElement() untuk membuat child element di dalam parent element.
+- **Shadow DOM**
+  - Shadow DOM merupakan aspek penting dalam web component untuk melakukan enkapsulasi DOM di dalam DOM.
+  - Shadow DOM dapat memisahkan struktur, style, dan behaviour dari dokumen HTML utama sehingga Shadow DOM menjadi tersembunyi dan terpisah dari kode yang lain pada halaman tersebut.
+  - Terdapat empat terminologi dari Shadow DOM yang perlu diketahui:
+    - Shadow host: Node di dalam regular DOM yang di dalamnya terdapat shadow DOM
+    - Shadow tree: DOM Tree di dalam Shadow DOM
+    - Shadow boundary: Lokasi dimana akhir dari Shadow DOM, dan awal dari regular DOM
+    - Shadow root: Node atau komponen inti dari Shadow Tree
+  - Dalam dasar penggunaanya, cukup memanfaatkan function attachShadow() dari obyek element yang dituju. Di dalam function tersebut memerlukan satu parameter berupa obyek yang mengandung satu properti mode dengan nilai open dan closed. Nilai open artinya kita bisa mengakses shadow DOM menggunakan JavaScript, sedangkan closed artinya kita tidak akan bisa mengakses shadow DOM dari luar.

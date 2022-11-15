@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Penggunaan Fech</title>
+  </head>
+  <body>
+    <script>
+      const baseUrl = "https://books-api.dicoding.dev";
+
+      const getResonse = () => {
+        fetch(`${baseUrl}/list`)
+          .then((response) => response.json())
+          .then((responseJson) => console.log(responseJson))
+          .catch((error) => console.log(error));
+      };
+
+      const getRequestAsyncAwait = async () => {
+        try {
+          const response = await fetch(`${baseUrl}/list`);
+          const responseJson = await response.json();
+
+          console.log(responseJson);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      // getResonse();
+      getRequestAsyncAwait();
+    </script>
+  </body>
+</html>

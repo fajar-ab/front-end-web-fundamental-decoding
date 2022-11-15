@@ -1,0 +1,28 @@
+# Rangkuman Webpack
+
+- **Apa itu Webpack**
+  - Webpack merupakan salah satu module bundler untuk javascript. Sebagaimana fungsinya sebagai module bundler, webpack dapat menggabung berbagai javascript module untuk digunakan oleh dokumen HTML secara statis.
+- **Core Concepts**
+  - Entry: Titik awal atau berkas utama yang akan dianalisa oleh webpack dan membentuk dependency graph.
+  - Output: Berkas javascript statis yang akan dihasilkan dari proses bundling berdasarkan entry point.
+  - Loaders: Transformasi tools pada webpack, yang akan memproses berkas selain JavaScript atau JSON yang diimpor menjadi format yang dapat digunakan ke tahap produksi.
+  - Plugin: Tools untuk melakukan optimasi bundle, manajemen aset dsb.
+  - Mode: Kondisi atau tingkatan sebagai acuan optimasi yang perlu diterapkan dalam prosesnya. Terdapat tiga mode yang dapat diterapkan, yaitu production, development, dan none.
+- **Memasang Webpack**
+  - Untuk menggunakan package webpack, kita jalankan perintah `npm install webpack webpack-cli --save-dev`. Package webpack merupakan package utama untuk menerapkan webpack, sedangkan webpack-cli digunakan untuk menjalankan webpack melalui Command Line Interface (CLI).
+  - Webpack memungkinkan tanpa menerapkan atau membuat berkas konfigurasi webpack khusus, yaitu zero configuration. Namun, alangkah baiknya kita menggunakan berkas konfigurasi dengan nama **webpack.config.js**.
+  - Untuk menerapkan webpack secara lebih advance, kamu bisa membuat berkas konfigurasinya agar dapat menerapkan loader dan plugin yang dibutuhkan. Jika tidak atau menggunakan zero configuration, kita tidak akan bisa mengimplementasikan webpack dengan maksimal.
+- **Menggunakan Webpack**
+  - Untuk menjalankan webpack melalui CLI (Command Line Interface) bisa menggunakan perintah `npx webpack`. Untuk melihat seluruh command yang tersedia, kamu bisa menjalankan perintah `npx webpack help`.
+  - Penggunaan loader
+  - Loader dapat digunakan untuk memproses berkas selain javascript. Namun, untuk menerapkannya kita perlu memasang loader (package) khusus untuk menangapi berkas yang dituju.
+  - Contohnya agar webpack dapat memproses berkas CSS, maka kita membutuhkan loader (package) css-loader dan style-loader.
+- **Penggunaan plugin**
+  - Plugin sangat bermanfaat untuk memaksimalkan proses bundling. Contohnya HtmlWebpackPlugin guna membuatkan berkas HTML dan menyematkan script hasil bundling pada berkas HTML.
+  - Penerapan Webpack Dev Server
+  - Webpack Dev Server merupakan salah satu tools yang digunakan untuk melakukan proses build secara otomatis ketika terjadi perubahan kode yang dituliskan, baik perubahan minor maupun mayor.
+  - Untuk menerapkannya perlu memasang webpack dev server dengan menjalankan perintah `npm install webpack-dev-server --save-dev`.
+  - Untuk menjalankannya, kita jalankan perintah `npx webpack serve` di terminal.
+- **Splitting webpack based on environment mode**
+  - Terdapat tiga mode konfigurasi webpack, yaitu production, development dan none. Terkadang kita memerlukan lebih dari satu konfigurasi dengan tujuan tertentu. Untuk mencapainya, kita bisa membuat dua berkas untuk mode yang berbeda-beda. Namun, hal tersebut kurang efektif karena akan terjadi duplikasi kode. Untuk mengatasinya kita menggunakan webpack-merge.
+  - Untuk menggunakannya, kita perlu memasang dulu dengan menjalankan perintah `npm install webpack-merge --save-dev`.

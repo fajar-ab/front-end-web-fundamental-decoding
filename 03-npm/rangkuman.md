@@ -1,0 +1,23 @@
+# Rangkuman Node Package Manager
+
+- **Apa itu NPM**
+  - NPM atau Node Package Manager adalah salah satu package manager yang mampu mengelola berbagai package-package atau paket-paket JavaScript.
+  - Kumpulan dari package-package JavaScript dapat di telurusi pada laman [npmjs.com](https://www.npmjs.com/).
+  - Untuk memasangkan NPM, cukup memasang NodeJS yang dapat diunduh pada laman [nodejs.org/en/download](https://nodejs.org/en/download/). Sangat disarankan untuk memilih versi Long Term Support (LTS) untuk mendapatkan dukungan yang berkepanjangan sehingga awet dalam penggunaanya.
+- **Mengenal berkas package.json**
+  - Berkas package.json merupakan berkas manifest yang menyimpan informasi-informasi mengenai proyek aplikasi web.
+  - Terdapat dua cara untuk membuatnya, yaitu manual dan command line. Namun, untuk cara manual tidak disarankan, ada cara yang lebih efektif yakni menggunakan command line. Kamu bisa melakukannya dengan menjalankan npm init di terminal.
+- **Penggunaan NPM**
+  - NPM dapat digunakan di command line, seperti Terminal untuk Linux/MaxOS atau Command Prompt/PowerShell untuk Windows.
+  - Terdapat banyak command yang dapat kita manfaatkan. Untuk melihatnya bisa menjalankan perintah npm help.
+  - Sebagai contoh, untuk memasang package ke proyek dapat menjalankan perintah `npm install <nama_package>`.
+  - Untuk melihat rincian penggunaan npm command dapat menambahkan command help di belakangnya. Contoh npm install -h.
+- **Penggunaan package**
+  - Dalam penggunaannya, kita memerlukan NodeJS untuk mengimpor package yang kita butuhkan, yakni menggunakan function `require()`. Namun, kode tersebut hanya dapat dijalankan di environment NodeJS.
+  - Untuk menggunakannya bisa menggunakan tag script, tapi cara ini bisa dicapai tanpa menggunakan NPM. Solusinya kita manfaatkan module bundler seperti Webpack.
+- **Runner Script**
+  - Pada berkas package.json, terdapat properti object JSON, yaitu scripts. Properti tersebut menyimpan script-script yang dapat dijalankan pada environment NodeJS sehingga penulisannya atau pemanggilannya dapat dilakukan lebih mudah. Jadi, runner script yang dimaksud di sini adalah hal demikian.
+  - Untuk menjalankan runner script adalah npm `run <script_name>`.
+- **Scope Package**
+  - Dalam pemasangan package, terdapat dua cakupan (scope), yaitu local dan global. Local berarti menyimpan package hanya di lingkup proyek, sedangkan global diguakan pada cakupan global atau dapat diakses pada proyek manapun.
+  - Untuk memasang package secara global dapat menambahkan flag `-g` setelah penulisan `npm install <nama_package>`.

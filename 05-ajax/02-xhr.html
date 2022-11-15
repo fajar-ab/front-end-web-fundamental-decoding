@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>XMLHttpRequest</title>
+  </head>
+  <body>
+    <script>
+      const getRequest = () => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.onload = function () {
+          console.log(JSON.parse(this.responseText));
+        };
+
+        xhr.onerror = function () {
+          console.log("error");
+        };
+
+        xhr.open("GET", "https://books-api.dicoding.dev/list");
+        xhr.send();
+      };
+
+      const postRequest = () => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.onload = function () {
+          console.log(JSON.parse(this.responseText));
+        };
+
+        xhr.onerror = function () {
+          console.log("error");
+        };
+
+        xhr.open("POST", "https://books-api.dicoding.dev/add");
+
+        // menambahkan properti pada header reques
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("X-Auth-Token", "12345");
+
+        const book = {
+          id: 10,
+          title: "cinta itu buta",
+          author: "galih",
+        };
+
+        xhr.send(JSON.stringify(book));
+      };
+
+      getRequest();
+      // postRequest();
+    </script>
+  </body>
+</html>
