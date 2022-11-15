@@ -1,0 +1,84 @@
+# Rangkuman ECMAScript 6
+
+Untuk memperdalam dan mengingat materi-materi dalam modul ini, penulis menyediakan rangkuman materi untuk mempermudah review materi yang telah dipelajari.
+
+- **Sejarah JavaScript**
+  - JavaScript dikembangkan oleh Netscape pada tahun 1995. Namun, sebenarnya pada tahun tersebut bukanlah bernama JavaScript, tetapi LiveScript.
+  - JavaScript merupakan perubahan nama dari LiveScript setelah Netscape dan Sun melakukan perjanjian lisensi.
+  - Terkadang JavaScript disebut sebagai ECMAScript setelah bahasa ini distandarisasi oleh European Computer Manufacturer’s Association (ECMA).
+  - Terdapat beberapa versi dari JavaScript:
+    - 2000 - 2010: ECMAScript 3 (ES3) merupakan versi popular digunakan ketika JavaScript sedang mendominasi. Dalam waktu ini, ECMAScript 4 juga sedang dalam proses pengembangan. Namun, pada tahun 2008 pengembangan tersebut dihentikan.
+    - 2009: ECMAScript 5 (ES5) diriliskan dengan memperbaiki hal-hal non-kontroversial
+    - 2015: ECMAScript 6 (ES6) hadir dengan membawa perubahan yang cukup besar, termasuk perubahan yang direncanakan pada proses pengembangan versi ke-empat.
+    - 2016 - Saat ini: JavaScript hanya melakukan pembaharuan-pembaharuan yang sifatnya kecil atau minor.
+- **Deklarasi variable**
+  - Variabel adalah sebuah wadah untuk menyimpan suatu data atau informasi.
+  - Cara deklarasi atau pembuatan variabel adalah menggunakan keyword var, const dan let dan diikuti dengan nama variabelnya
+    - Var merupakan keyword untuk mendeklarasikan variabel dalam cakupan function atau global. Namun, pendeklarasian variabel menggunakan var akan menyebabkan terangkatnya variabel pada tingkatan atas dari function meskipun tidak dituliskan pada tingkatan atas. Inilah yang dinamakan hoisting
+    - Const merupakan keyword untuk mendeklarasikan variabel dalam cakupan blok statement yang hanya melakukan inisialisasi sekali di awal saja. Ini sangat disarankan jika variabel tersebut tidak akan melakukan re-initialization.
+    - Let merupakan keyword yang sama seperti const tetapi memungkinkan melakukan re-initialization (inisialisasi nilai ulang)
+- **Template literals**
+  - Template literal merupakan fitur untuk membuat nilai string dengan cara yang lebih kompleks.
+  - Penerapan template literal tidak menggunakan tanda single quote maupun double quote, tetapi menggunakan simbol backtick (`), baik diawal dan diakhir.
+  - Dalam template literal, kita dapat menyisipkan variabel untuk ditampilkan nilainya.
+  - Template literal juga dapat membaca line space secara langsung tanpa menggunakan escape character. Contoh: `\n`.
+- **Destructuring Object dan Array**
+  - Destructuring adalah fitur dalam javascript untuk mengeluarkan nilai dari array atau properti-properti dari obyek ke dalam satuan lebih kecil.
+  - Destructuring Object:
+    - Dilakukan menggunakan tanda kurung kurawal `{ }`, yang mana di dalamnya terdapat nama nama variabel guna menyimpan value yang diberikan dari obyek. Nama-nama ini harusnya sesuai dengan nama key yang ada di obyek.
+  - Destructuring Array:
+    - Dilakukan menggunakan tanda kurung siku `[ ]`, yang mana di dalamnya terdapat nama nama variabel guna menyimpan value yang diberikan dari array.
+    - Nilai yang akan diterima saat destructuring sesuai dengan urutan item-item di dalam array. Namun, jika tidak memerlukan satu atau lebih item, kita tetap harus menyesuaikan posisi itemnya tetapi tidak perlu mengisi nama variabel (dikosongkan).
+  - Destructuring assignment pada object dan array
+    - Destructuring assignment adalah melakukan re-assignment pada variabel yang telah dideklarasikan atau diinisialisasikan dengan cara destructuring.
+- **Spreading Operator dan Rest Parameter**
+  - Spreading Operator merupakan fitur untuk melakukan pembentangan atau meleburkan nilai dari suatu array menjadi beberapa elemen sesuai panjang array-nya.
+  - Rest Parameter merupakan fitur untuk menyatukan beberapa elemen ke dalam array. Fitur ini merupakan kebalikan dari Spreading Operator.
+  - Penerapan Spread Operator dan Rest Parameter dilakukan menggunakan three dots atau tiga tiitk (`...`) dan diikuti nama array atau iterable object-nya. Contoh: `...arrays;`.
+  - Fitur ini biasanya sangat berguna jika kita ingin menggabungkan beberapa array menjadi satu.
+  - Rest parameter juga sangat berguna ketika digunakan pada destructuring array. Yakni beberapa item array awal akan disimpan ke variabel sedangkan sisanya akan disimpan ke array baru.
+- **Arrow Function**
+  - Arrow function merupakan fitur yang sama seperti regular function tetapi dituliskan dengan cara yang sederhana.
+  - Penulisan arrow function tidak menggunakan keyword function tetapi tanda panah, yang terdiri dari simbol sama dengan (=) dan simbol panah kanan (>). Sedangkan parameter diletakkan sebelum tanda panah dan expression atau block statement dituliskan setelah tanda panah. Jika kita tidak membutuhkan parameter apapun, kita harus mengisinya dengan underscore (\_) atau tanda kurung biasa.
+  - Selain itu, penulisannya memungkinkan tanpa menggunakan blok statement jika kode yang dituliskan mengembalikan suatu nilai (expression) dan sangat sederhana.
+  - Arrow function tidak memiliki keyword this. Namun, jika kita tetap menggunakan keyword tersebut, maka akan bernilai obyek yang di atasnya, dimana arrow function tersebut berada
+- **Default parameter**
+  - Default parameter digunakan untuk memberikan default value pada parameter regular function atau arrow function sehingga terhindar menghasilkan undefined.
+- **Class**
+  - Class merupakan sebuah blueprint yang dideklarasikan untuk membuat obyek.
+  - Blueprint merupakan sebuah template yang memiliki suatu properti dan fungsi, yang biasanya dianalogikan dengan perilaku dan kemampuan.
+  - Sebelum menggunakan keyword class, javascript menggunakan function untuk membuat obyek baru. Namun, class lebih disarankan agar deklarasinya lebih mudah karena mirip dengan bahasa pemrograman yang pada dasar menggunakan paradigma berorientasi obyek.
+  - Deklarasi class menggunakan keyword class, diikuti nama classnya dan diikuti blok statement. Blok statement tersebut berisikan constructor dan method-method yang dibutuhkan.
+  - Biasanya supaya properti dapat diakses dan dimanipulasi di luar class, kita akan menerapkan getter/setter untuk properti. Getter/setter tersebut diakses dengan cara konsep properti pada umumnya. Contoh: untuk mendapatkan value dari properti kita menggunakan getter dengan cara: myCar.brand, sedangkan untuk mengatur atau memanipulasi properti di luar class menggunakan setter dengan cara: myCar.brand = “Toyota”.
+  - Untuk membuat obyek dari class, kita perlu gunakan keyword new dan diikuti nama classnya. Contoh: new MyClass();.
+  - Standarnya nama class dituliskan dengan PascalCase.
+- **Inheritance**
+  - Inheritance merupakan pewarisan sifat yang mana kemampuan atau perilaku parent class dapat diturunkan pada pewarisnya (child class).
+  - Inheritance diterapkan dengan menambahkan keyword extends setelah nama class dan sebelum pembuka blok statement. Kemudian diikuti dengan nama parent classnya.
+- **Static Method**
+  - Static method merupakan method atau function yang dapat dijalankan tanpa membuat atau melakukan instansiasi obyek. Namun, pemanggilannya cukup memanggil nama class dan diikuti dengan nama static methodnya.
+  - Pembuatan static method menggunakan keyword static di belakang nama method itu sendiri.
+- **Promise**
+  - Promise merupakan fitur untuk menangani proses program yang bersifat asyncronous yang menggunakan alternatif lain selain callback function, yaitu chaining function then().
+  - Dalam promise terdapat tiga kondisi, yaitu pending (sedang diproses), fulfilled (terpenuhi), rejected (gagal dipenuhi).
+  - Untuk menerapkan promise, kita perlu membuat object dari class Promise. Selain itu, kita perlu memasukkan argument berupa resolver function atau executor function yang akan dijalankan secara otomatis ketika constructor Promise dipanggil.
+  - Resolver function atau executor function memiliki dua parameter opsional, keduanya berfungsi sebagai resolve() dan reject() function. Function resolve merupakan parameter pertama yang menerima satu parameter sebagai data yang akan dikirimkan ketika promise berhasil. Sedangkan function reject merupakan parameter kedua yang menerima satu parameter yang juga menerima data yang akan dikirimkan ketika promise tidak terpenuhi. Ketika fungsi resolve terpanggil, kondisi promise berubah menjadi filfilled. Sedangkan ketika fungsi reject terpanggil, kondisi promise berubah menjadi rejected.
+  - Untuk menangani kondisi promise yang berubah menjadi fulfilled, akan diteruskan ke chaining function then. Namun, kondisi promise yang berubah menjadi rejected akan diteruskan ke function catch.
+- **Promise Berantai**
+  - Promise memungkinkan kita melakukan proses promise secara berantai. Sebelumnya, kita melakukannya dengan callback hell. Untuk melakukannya, cukup memasukkan obyek promise di dalam parameter then().
+- **Promise All**
+  - Promise All digunakan untuk menjalankan banyak promise sekaligus. Untuk mencapainya, kita menggunakan static function all() dari class atau blueprint Promise. Static function ini menerapkan satu parameter berupa array yang berisi dua atau lebih obyek promise.
+  - Hasil yang dikeluarkan bebarengan. Artinya meskipun salah satu proses dari promise selesai lebih awal, tetapi semua promise akan dikeluarkan secara bebarengan.
+- **Async/Await**
+  - Async/Await merupakan teknik penulisan untuk mengatasi proses asyncronous dengan gaya penulisan syncronous.
+  - Untuk menerapkan async/await, kamu bisa menambahkan keyword await dan diikuti dengan obyek promise. Jangan lupa juga tambahkan keyword async di awal keyword function pada regular function atau penulisan parameter pada arrow function.
+  - Teknik ini hadir sejak ECMAScript 2017 (ES8)
+  - Untuk penanganan onRejected dalam teknik ini, kita bisa menggunakan fitur try/catch. Untuk penanganan rejected diletakkan pada blok statement catch.
+  - Untuk melakukan promise berantai dengan teknik ini, kamu juga bisa melakukannya dengan mengurutkannya berdasarkan baris kode. Tentunya dengan menyertakan keyword await di depannya.
+- **Module**
+  - Module merupakan fitur pada javascript untuk membagi script menjadi beberapa bagian. Namun, fitur ini baru hadir pada ES6. Awalnya proses pembagian dan penggabungan ini dilakukan menggunakan tag script yang disusun. Urutan peletakkannyapun sangat rentan.
+  - JavaScript Module diterapkan dengan melakukan impor dan ekspor variabel, class, object, array, dsb.
+  - Dalam mengekspor satu nilai dengan banyak nilai berbeda. Ekspor untuk satu nilai menggunakan keyword default export dan diikuti nilai yang ingin di ekspor. Sedangkan banyak nilai dapat dikirimkan dengan keyword export dan diikuti dengan kurung kurawal object yang berisikan banyak nilai.
+  - Dalam melakukan impor satu nilai dan banyak nilai juga berbeda. Impor satu nilai dilakukan dengan keyword import dan diikuti dengan penamaan variabel yang dibebaskan. Kemudian diikuti kembali dengan keyword from dan nilai string yang berisikan relative path dari berkas yang dituju. Sedangkan impor banyak nilai yang menggunakan cara yang sama dengan sebelumnya, namun nilai yang dikirimkan dengan named export akan diatasi dengan teknik destructuring object.
+  - JavaScript Module bersifat reusable.
+    JavaScript Module diaktifkan menggunakan atribut element bernama type dan value module
